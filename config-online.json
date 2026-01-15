@@ -1,0 +1,115 @@
+{
+  "price": 2000,
+  "period": "month",
+  "description": "Access all online batches with expert instructors",
+  "title": "Online Batch Access Pass",
+  "accessFee": {
+    "price": 800000,
+    "currency": "₹",
+    "period": "year",
+    "description": "Access all online batches"
+  },
+  "courses": [
+    {
+      "id": "java",
+      "name": "Java Full Stack",
+      "icon": "code",
+      "color": "orange",
+      "price": 4999,
+      "duration": "6 Months",
+      "batchCount": 12
+    },
+    {
+      "id": "python",
+      "name": "Python Stack",
+      "icon": "terminal",
+      "color": "yellow",
+      "price": 44999,
+      "duration": "5 Months",
+      "batchCount": 8
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "icon": "security",
+      "color": "red",
+      "price": 49000,
+      "duration": "4 Months",
+      "batchCount": 4
+    },
+    {
+      "id": "aiml",
+      "name": "AI & Machine Learning",
+      "icon": "smart_toy",
+      "color": "teal",
+      "price": 49999,
+      "duration": "6 Months",
+      "batchCount": 5
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Computing",
+      "icon": "cloud",
+      "color": "blue",
+      "price": 77000,
+      "duration": "6 Months",
+      "batchCount": 1
+    },
+    {
+      "id": "data",
+      "name": "automation",
+      "icon": "analytics",
+      "color": "purple",
+      "price": 49999,
+      "duration": "4 Months",
+      "batchCount": 7
+    }
+  ],
+  "batches": [
+    {
+      "id": "batch-1",
+      "courseId": "java",
+      "faculty": "Jyoti",
+      "startTime": "09:00 AM",
+      "endTime": "11:00 AM",
+      "day": "Mon",
+      "duration": "6.0 Hours"
+    },
+    {
+      "id": "batch-2",
+      "courseId": "cybersecurity",
+      "faculty": "Jane",
+      "startTime": "11:30 AM",
+      "endTime": "01:30 PM",
+      "day": "Tue",
+      "duration": "2.0 Hours"
+    },
+    {
+      "id": "batch-3",
+      "courseId": "java",
+      "faculty": "Sarah Connor",
+      "startTime": "02:00 PM",
+      "endTime": "04:00 PM",
+      "day": "Wed",
+      "duration": "2.0 Hours"
+    },
+    {
+      "id": "batch-4",
+      "courseId": "aiml",
+      "faculty": "Dr. Alan Turing",
+      "startTime": "10:00 AM",
+      "endTime": "12:00 PM",
+      "day": "Thu",
+      "duration": "2.0 Hours"
+    },
+    {
+      "id": "batch-5",
+      "courseId": "cloud",
+      "faculty": "Bob Vance",
+      "startTime": "01:00 PM",
+      "endTime": "03:00 PM",
+      "day": "Fri",
+      "duration": "2.0 Hours"
+    }
+  ]
+}
