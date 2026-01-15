@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TrainAI - Pricing Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b5ec2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2632",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#2a3b4d",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200 overflow-hidden h-screen flex flex-col">
+    <header
+        class="flex-none z-50 w-full border-b border-border-light dark:border-border-dark bg-white dark:bg-card-dark">
+        <div class="flex w-full items-center justify-between px-6 py-3">
+            <div class="flex items-center gap-2 cursor-pointer">
+                <div class="flex items-center justify-center size-8 rounded bg-primary text-white">
+                    <span class="material-symbols-outlined">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Tech-Pro AI <a
+                        href="A9Admin.html" class="text-slate-400 font-normal ml-2 text-sm hover:text-primary">Admin
+                        Dashboard</a></h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-slate-500 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <div
+                    class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">
+                    JD
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 overflow-hidden relative">
+        <aside
+            class="hidden lg:flex flex-col w-64 bg-white dark:bg-card-dark border-r border-border-light dark:border-border-dark overflow-y-auto flex-shrink-0">
+            <nav class="flex-1 p-4 space-y-1">
+                <div class="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Management</div>
+                <a href="Pricingai.html" target="_blank"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+                    AI Pricing
+                </a>
+                <a href="Pricinghuman.html" target="_blank"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">person_play</span>
+                    Trainer Pricing
+                </a>
+                <a href="Pricinghybrid.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+                    Hybrid Pricing
+                </a>
+                <a href="PaymentAdmin.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+                    Learning Path Experiences
+                </a>
+                <a href="AILearningAdmin.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+                    AI based Pricing
+                </a>
+                <a href="OnlineAdmin.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+                    Online based Pricing
+                </a>
+                <a href="OfflineAdmin.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+                    Offline based Pricing
+                </a>
+
+                <div class="my-4 border-t border-border-light dark:border-border-dark"></div>
+                <div class="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Plans &amp; Offers
+                </div>
+                <a href="Pricingsub.html" target="_blank"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium bg-primary/10 text-primary"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px] fill-current">card_membership</span>
+                    Subscription Plans
+                </a>
+                <a href="AddsOn.html" target="_blank"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">extension</span>
+                    Add-ons
+                </a>
+                <a href="Discounts.html" target="_blank"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">percent</span>
+                    Discounts
+                </a>
+                <div class="my-4 border-t border-border-light dark:border-border-dark"></div>
+                <div class="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Analytics</div>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">analytics</span>
+                    Pricing Reports
+                </a>
+            </nav>
+            <div class="p-4 border-t border-border-light dark:border-border-dark">
+                <a href="A1Homepage.html" target="_blank"><button
+                        class="flex w-full items-center gap-2 text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">logout</span>
+                        Sign Out
+                    </button></a>
+            </div>
+        </aside>
+        <main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark scroll-smooth">
+            <div class="w-full max-w-7xl mx-auto px-6 py-8 md:py-12 flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Subscription Plans</h1>
+                        <p class="text-slate-500 dark:text-slate-400 mt-1">Manage and view available training tiers.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button
+                            class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-card-dark border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Export
+                            PDF</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div
+                        class="flex flex-col h-full rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-card-dark overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="p-6 md:p-8 flex flex-col flex-1 gap-4">
+                            <div class="flex justify-between items-start">
+                                <div
+                                    class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-2xl">smart_toy</span>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Basic</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">AI Basic Plan</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                    Automated analysis for self-starters. Get instant feedback on your performance using
+                                    computer vision.
+                                </p>
+                            </div>
+                            <div class="mt-4 space-y-3">
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                                    24/7 Availability
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                                    Instant AI Feedback
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                                    Auto Video Analysis
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 mt-auto">
+                            <a href="Pricingai.html" target="_blank"
+                                class="flex items-center justify-center w-full py-3 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold hover:border-primary hover:text-primary transition-all"
+                                href="PriceAi.html">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col h-full rounded-xl border-2 border-primary bg-white dark:bg-card-dark overflow-hidden shadow-lg shadow-primary/5 relative">
+                        <div class="absolute top-0 inset-x-0 h-1 bg-primary"></div>
+                        <div class="p-6 md:p-8 flex flex-col flex-1 gap-4">
+                            <div class="flex justify-between items-start">
+                                <div
+                                    class="size-12 rounded-lg bg-primary flex items-center justify-center text-white shadow-md shadow-primary/30">
+                                    <span class="material-symbols-outlined text-2xl">offline_bolt</span>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-primary/10 text-xs font-bold uppercase tracking-wide text-primary">Popular</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Hybrid Plan</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                    Balanced growth with AI speed and weekly expert human review. The best value for
+                                    serious athletes.
+                                </p>
+                            </div>
+                            <div class="mt-4 space-y-3">
+                                <div class="flex items-center gap-3 text-sm text-slate-900 dark:text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                    Weekly Human Review
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-900 dark:text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                    Personalized Plans
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-900 dark:text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                    Priority Support
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 mt-auto">
+                            <a href="Pricinghybrid.html" target="_blank"
+                                class="flex items-center justify-center w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold transition-all shadow-md shadow-primary/20"
+                                href="PriceHybrid.html">
+                                Configure Hybrid
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col h-full rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-card-dark overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="p-6 md:p-8 flex flex-col flex-1 gap-4">
+                            <div class="flex justify-between items-start">
+                                <div
+                                    class="size-12 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                                    <span class="material-symbols-outlined text-2xl">person_play</span>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-900/30 text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400">Elite</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Human Pro Plan</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                    Dedicated 1-on-1 professional coaching. Live sessions and deep strategy analysis for
+                                    elites.
+                                </p>
+                            </div>
+                            <div class="mt-4 space-y-3">
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span
+                                        class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-[18px]">check</span>
+                                    1-on-1 Live Sessions
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span
+                                        class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-[18px]">check</span>
+                                    Direct Messaging
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                    <span
+                                        class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-[18px]">check</span>
+                                    Custom Nutrition
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 mt-auto">
+                            <a href="Pricinghuman.html" target="_blank"
+                                class="flex items-center justify-center w-full py-3 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold hover:border-purple-600 hover:text-purple-600 dark:hover:text-purple-400 transition-all"
+                                href="PriceHuman.html">
+                                View Pro Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Feature Breakdown</h2>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Detailed comparison of what is included in
+                            each tier.</p>
+                    </div>
+                    <div
+                        class="overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-card-dark shadow-sm">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr
+                                        class="bg-slate-50 dark:bg-slate-800/50 border-b border-border-light dark:border-border-dark">
+                                        <th
+                                            class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[200px]">
+                                            Features</th>
+                                        <th
+                                            class="p-4 text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white text-center w-1/4">
+                                            AI Basic</th>
+                                        <th
+                                            class="p-4 text-xs font-bold uppercase tracking-wider text-primary text-center w-1/4">
+                                            Hybrid</th>
+                                        <th
+                                            class="p-4 text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white text-center w-1/4">
+                                            Human Pro</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border-light dark:divide-border-dark text-sm">
+                                    <tr>
+                                        <td class="p-4 text-slate-700 dark:text-slate-300 font-medium">Video Analysis
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Automated</td>
+                                        <td class="p-4 text-center text-slate-900 dark:text-white font-bold">Auto +
+                                            Human Check</td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Full Manual
+                                            Review</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 text-slate-700 dark:text-slate-300 font-medium">Feedback Time
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Instant</td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Instant + Weekly
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Real-time Session
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 text-slate-700 dark:text-slate-300 font-medium">Support Channel
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Community Forum
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Priority Email
+                                        </td>
+                                        <td class="p-4 text-center text-slate-500 dark:text-slate-400">Direct Message /
+                                            SMS</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 text-slate-700 dark:text-slate-300 font-medium">Custom Plans</td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[20px]">remove</span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">check</span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">check</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 text-slate-700 dark:text-slate-300 font-medium">Live Sessions
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[20px]">remove</span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[20px]">remove</span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">check</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Frequently asked questions
+                        </h2>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 text-sm">Quick answers to common questions
+                            about our plans.</p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <details
+                            class="group rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark open:border-primary/50">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-4 text-sm font-medium text-slate-900 dark:text-white marker:content-none hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                                Can I switch plans later?
+                                <span
+                                    class="material-symbols-outlined text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-4 pb-4 pt-0 text-sm text-slate-600 dark:text-slate-400">
+                                Yes, you can upgrade or downgrade your plan at any time. Changes will take effect at the
+                                start of your next billing cycle.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark open:border-primary/50">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-4 text-sm font-medium text-slate-900 dark:text-white marker:content-none hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                                Is there a free trial for Human Pro?
+                                <span
+                                    class="material-symbols-outlined text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-4 pb-4 pt-0 text-sm text-slate-600 dark:text-slate-400">
+                                We offer a discounted first session for Human Pro, but due to the personalized nature of
+                                1-on-1 coaching, we do not offer a free trial. The AI Basic plan does have a 7-day free
+                                trial.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark open:border-primary/50">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-4 text-sm font-medium text-slate-900 dark:text-white marker:content-none hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                                How does the Hybrid review work?
+                                <span
+                                    class="material-symbols-outlined text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-4 pb-4 pt-0 text-sm text-slate-600 dark:text-slate-400">
+                                In the Hybrid plan, our AI analyzes your daily workouts. Once a week, a certified human
+                                trainer reviews your weekly progress data and sends you a personalized video message.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <footer
+                    class="mt-8 border-t border-border-light dark:border-border-dark pt-8 pb-12 text-center text-sm text-slate-400">
+                    <p>© 2023 TrainAI Inc. All rights reserved.</p>
+                    <div class="flex justify-center gap-6 mt-4">
+                        <a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Privacy</a>
+                        <a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Terms</a>
+                        <a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Support</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

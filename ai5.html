@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin AI Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d0bb95",
+                        "background-light": "#f7f7f6",
+                        "background-dark": "#1d1a15",
+                        "surface-dark": "#26231d",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3e382e;
+            border-radius: 3px;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary selection:text-background-dark">
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<a href="Faculty.html" target=""><button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">arrow_back</span>
+</button></a>
+<h1 class="text-lg font-bold tracking-tight text-center flex-1 truncate px-2">
+            Artificial Intelligence 
+        </h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">save</span>
+</button>
+</header>
+<main class="flex-1 w-full max-w-md mx-auto p-4 pb-24 space-y-6">
+<div class="flex p-1 bg-gray-200 dark:bg-surface-dark rounded-xl">
+<label class="flex-1 relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="view_mode" type="radio" value="details"/>
+<div class="flex items-center justify-center py-2 px-4 rounded-lg text-sm font-medium transition-all duration-200 text-gray-500 dark:text-gray-400 peer-checked:bg-white dark:peer-checked:bg-background-dark peer-checked:text-gray-900 dark:peer-checked:text-primary peer-checked:shadow-sm">
+                    Course Details
+                </div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="view_mode" type="radio" value="faculty"/>
+<div class="flex items-center justify-center py-2 px-4 rounded-lg text-sm font-medium transition-all duration-200 text-gray-500 dark:text-gray-400 peer-checked:bg-white dark:peer-checked:bg-background-dark peer-checked:text-gray-900 dark:peer-checked:text-primary peer-checked:shadow-sm">
+                    Faculty Management
+                </div>
+</label>
+</div>
+<article class="bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="p-5 pb-4 border-b border-gray-100 dark:border-gray-800/50">
+<div class="flex items-start justify-between mb-4">
+<input aria-label="Course Code" class="w-24 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/20 text-yellow-800 dark:text-primary border-none focus:ring-1 focus:ring-primary focus:bg-white dark:focus:bg-black text-center" type="text" value="AI-CS501"/>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<input class="block w-full text-xl font-bold leading-tight mb-4 bg-transparent border-0 border-b border-dashed border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-0 p-0 text-gray-900 dark:text-white placeholder-gray-400" placeholder="Course Title" type="text" value="Artificial Intelligence"/>
+<div class="relative w-full h-40 mb-4 rounded-xl overflow-hidden group cursor-pointer bg-gray-100 dark:bg-gray-800 border-2 border-dashed border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBP1g8n_Ll9pxqAGX5CXpuRFcrlEqAbkaxtc_D4AwMmyZHYQOvuLqxHskLpP9Ywlgya1r0j_FdDy1BZ0Qk8pCScNj4NGwmoC-zBpODI67NYRheV2f7EDIgeSDxr7femXTbtR1fXWIAMUNqWv27vw5K6GNfDhqNIHPT_9wF4q9kXj8OJ-DwFL-KqMY3V-WpWNGfE9YKlYOSak8Ihu2WfoE_Pfr9LRD7beTmNTekk_-ycxSol4BWa6YAhZQ7TlJFQo5nOLNGzjgjES6lJ');"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-300 text-3xl mb-1">add_a_photo</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-400">Tap to upload cover</span>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<div class="mb-4">
+<label class="block text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">Description</label>
+<textarea class="w-full text-sm text-gray-600 dark:text-gray-300 bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary p-3 resize-none" placeholder="Enter course description..." rows="3">Fundamentals of AI including machine learning, neural networks, and natural language processing. Designed for advanced CS students.</textarea>
+</div>
+</div>
+<details class="group bg-gray-50/50 dark:bg-black/20" open="">
+<summary class="list-none p-5 pt-4 flex items-center justify-between cursor-pointer [&amp;::-webkit-details-marker]:hidden focus:outline-none select-none">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                        Upcoming Lectures
+                    </h3>
+<span class="material-symbols-outlined text-gray-400 transition-transform duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 space-y-4">
+<div class="grid grid-cols-[24px_1fr] gap-x-3 group relative">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary mt-3 ring-4 ring-primary/20"></div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-full min-h-[40px] my-1"></div>
+</div>
+<div class="pb-2">
+<input class="w-full text-sm font-medium text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0 placeholder-gray-400" placeholder="Lecture Topic" type="text" value="Intro to Neural Networks"/>
+<div class="flex gap-2 mt-1">
+<input class="w-1/2 text-xs text-primary font-medium bg-transparent border-none p-0 focus:ring-0 placeholder-primary/50" placeholder="Date &amp; Time" type="text" value="Mon, Nov 14 • 09:00 AM"/>
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 text-right bg-transparent border-none p-0 focus:ring-0 placeholder-gray-500" placeholder="Faculty Name" type="text" value="Dr. A. Turing"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-x-3 group relative">
+<div class="flex flex-col items-center">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 mt-3"></div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-full min-h-[40px] my-1"></div>
+</div>
+<div class="pb-2">
+<input class="w-full text-sm font-medium text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0 placeholder-gray-400" placeholder="Lecture Topic" type="text" value="Supervised Learning"/>
+<div class="flex gap-2 mt-1">
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 font-medium bg-transparent border-none p-0 focus:ring-0" placeholder="Date &amp; Time" type="text" value="Wed, Nov 16 • 09:00 AM"/>
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 text-right bg-transparent border-none p-0 focus:ring-0" placeholder="Faculty Name" type="text" value="Dr. A. Turing"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-x-3 group relative">
+<div class="flex flex-col items-center">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 mt-3"></div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-full min-h-[40px] my-1"></div>
+</div>
+<div class="pb-2">
+<input class="w-full text-sm font-medium text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0 placeholder-gray-400" placeholder="Lecture Topic" type="text" value="Unsupervised Learning"/>
+<div class="flex gap-2 mt-1">
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 font-medium bg-transparent border-none p-0 focus:ring-0" placeholder="Date &amp; Time" type="text" value="Fri, Nov 18 • 09:00 AM"/>
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 text-right bg-transparent border-none p-0 focus:ring-0" placeholder="Faculty Name" type="text" value="Prof. G. Hinton"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-x-3 group relative">
+<div class="flex flex-col items-center">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 mt-3"></div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-full min-h-[40px] my-1"></div>
+</div>
+<div class="pb-2">
+<input class="w-full text-sm font-medium text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0 placeholder-gray-400" placeholder="Lecture Topic" type="text" value="Deep Learning Intro"/>
+<div class="flex gap-2 mt-1">
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 font-medium bg-transparent border-none p-0 focus:ring-0" placeholder="Date &amp; Time" type="text" value="Mon, Nov 21 • 09:00 AM"/>
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 text-right bg-transparent border-none p-0 focus:ring-0" placeholder="Faculty Name" type="text" value="Prof. Y. LeCun"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-x-3 group relative">
+<div class="flex flex-col items-center">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 mt-3"></div>
+</div>
+<div class="pb-2">
+<input class="w-full text-sm font-medium text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0 placeholder-gray-400" placeholder="Lecture Topic" type="text" value="Computer Vision Basics"/>
+<div class="flex gap-2 mt-1">
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 font-medium bg-transparent border-none p-0 focus:ring-0" placeholder="Date &amp; Time" type="text" value="Wed, Nov 23 • 09:00 AM"/>
+<input class="w-1/2 text-xs text-gray-500 dark:text-gray-400 text-right bg-transparent border-none p-0 focus:ring-0" placeholder="Faculty Name" type="text" value="Dr. F. Li"/>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 py-3 border border-dashed border-gray-300 dark:border-gray-700 rounded-lg text-xs font-semibold text-center text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">add</span>
+        Add Lecture Session
+    </button>
+</div>
+</details>
+</article>
+<article class="bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="p-5 pb-4">
+<div class="flex items-start justify-between mb-3">
+<input class="w-20 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 border-none focus:ring-1 focus:ring-blue-500 text-center" type="text" value="AI-SELF"/>
+<span class="material-symbols-outlined text-gray-400">smart_toy</span>
+</div>
+<input class="block w-full text-xl font-bold leading-tight mb-4 bg-transparent border-0 border-b border-dashed border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-0 p-0 text-gray-900 dark:text-white" type="text" value="AI Tutor: Python for ML"/>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white ring-2 ring-white dark:ring-gray-700 relative overflow-hidden group">
+<span class="material-symbols-outlined">smart_toy</span>
+<div class="absolute inset-0 bg-black/40 hidden group-hover:flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</div>
+</div>
+<div class="flex-1">
+<input class="w-full text-sm font-bold text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0" type="text" value="Automated Code Review"/>
+<input class="w-full text-xs text-gray-500 dark:text-gray-400 bg-transparent border-none p-0 focus:ring-0" type="text" value="Instant Feedback System"/>
+</div>
+</div>
+</div>
+<div class="px-5 pb-5">
+<div class="flex items-center justify-between p-4 bg-gradient-to-r from-primary/20 to-primary/5 rounded-xl border border-primary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">all_inclusive</span>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Self-Paced Module</p>
+<p class="text-xs text-gray-600 dark:text-gray-300">Flexible learning</p>
+</div>
+</div>
+<div class="relative group">
+<input class="w-32 text-center px-3 py-1 rounded-full text-xs font-bold bg-primary text-background-dark shadow-sm border-none focus:ring-2 focus:ring-white cursor-text" type="text" value="24/7 Availability"/>
+<span class="absolute -top-2 -right-2 w-4 h-4 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<span class="material-symbols-outlined text-[10px]">edit</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+<article class="bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="p-5 pb-2 border-b border-gray-100 dark:border-gray-800/50">
+<div class="flex items-start justify-between mb-3">
+<input class="w-24 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/20 text-yellow-800 dark:text-primary border-none focus:ring-1 focus:ring-primary text-center" type="text" value="AI-ETHICS"/>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<input class="block w-full text-xl font-bold leading-tight mb-4 bg-transparent border-0 border-b border-dashed border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-0 p-0 text-gray-900 dark:text-white" type="text" value="Ethics in AI"/>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center ring-2 ring-primary/20 relative group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqAERN3i_rKWBju9fy2MdxnkgAHylVUQMgpFELeTQ0c1omyW_6xWkGff_ZvLEpcIWBIZyhPFyTwrjw9cGB3wluhnBV8eP2ebkAZd5eu8PIaPm8bBU5GOLVxsPDlxo8-Z1q4TKSsAwjxjcdYf6o2JoFnk1IPgOnfFpyQmOW3qNf4bPBJtQzp-t2tRhx8ennZ9qWOdgTbIAAoKN3amnOt6uWyLRJQ-eS8dM9aPDWqySyYJDC61uqhFjuyb6Af47YcTuQdeQwXM9OP6Pd');">
+<div class="absolute inset-0 bg-black/40 rounded-full hidden group-hover:flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white text-[20px]">edit</span>
+</div>
+</div>
+<div class="flex-1">
+<input class="w-full text-sm font-bold text-gray-900 dark:text-white bg-transparent border-none p-0 focus:ring-0" type="text" value="Prof. James Miller"/>
+<input class="w-full text-xs text-gray-500 dark:text-gray-400 bg-transparent border-none p-0 focus:ring-0" type="text" value="Senior Lecturer"/>
+</div>
+</div>
+</div>
+<details class="group bg-gray-50/50 dark:bg-black/20">
+<summary class="list-none p-5 pt-4 flex items-center justify-between cursor-pointer [&amp;::-webkit-details-marker]:hidden focus:outline-none">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                        Upcoming Lectures
+                    </h3>
+<span class="material-symbols-outlined text-gray-400 transition-transform duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 space-y-0">
+<div class="text-sm text-gray-500 dark:text-gray-400 italic py-2 text-center">No upcoming lectures scheduled.</div>
+<button class="w-full mt-2 py-2 text-xs font-semibold text-center text-primary hover:text-primary/80 transition-colors">
+        + Add Lecture
+    </button>
+</div>
+</details>
+</article>
+</main>
+<div class="fixed bottom-0 w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 p-4 pb-8 backdrop-blur-lg bg-opacity-90 dark:bg-opacity-90 z-40">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-medium">Courses</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Faculty</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</div>
+
+</body></html>

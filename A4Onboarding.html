@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-TECH PRO LMS - Learning Paths</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for cleaner look in specific areas if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        /* Smooth transition for details summary marker rotation */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-slate-200 bg-white/95 backdrop-blur-sm dark:bg-slate-900/95 dark:border-slate-800 px-6 lg:px-10 py-3 shadow-sm">
+            <div class="flex items-center gap-4 lg:gap-8">
+                <div class="flex items-center gap-3 text-slate-900 dark:text-white">
+                    <div class="size-8 flex items-center justify-center rounded bg-primary text-white">
+                        <span class="material-symbols-outlined text-[20px]">school</span>
+                    </div>
+
+
+                    <h2 class="text-lg font-bold leading-tight tracking-tight">AI-TECH PRO</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-6 lg:gap-9">
+                    <a href="A1Homepage.html" target="_blank"
+                        class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
+                        href="#">Home</a>
+                    <a class="text-sm font-medium text-primary" href="#">Learning Paths</a>
+
+                </nav>
+            </div>
+            <div class="flex flex-1 justify-end gap-4 lg:gap-8">
+                <label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+                    <div
+                        class="flex w-full flex-1 items-stretch rounded-lg h-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 transition-colors focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+                        <div class="text-slate-400 dark:text-slate-500 flex items-center justify-center pl-3">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <input
+                            class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-sm text-slate-900 dark:text-white focus:outline-0 placeholder:text-slate-400 px-3"
+                            placeholder="Search paths..." />
+                    </div>
+                </label>
+                <!-- User Name Display with Logout -->
+                <div class="relative flex items-center gap-2">
+                    <div class="size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm"
+                        id="user-avatar">
+                        <span class="material-symbols-outlined text-[20px]">person</span>
+                    </div>
+                    <div class="hidden sm:flex flex-col">
+                        <span id="user-fullname" class="text-sm font-semibold text-slate-800 dark:text-white">Guest
+                            User</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Learner</span>
+                    </div>
+                    <!-- Logout Button -->
+                    <button id="logout-btn"
+                        class="ml-2 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        title="Logout">
+                        <span
+                            class="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px]">logout</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-8">
+                <div class="layout-content-container flex flex-col max-w-[1024px] flex-1">
+                    <!-- Features Section -->
+                    <div class="flex flex-col gap-10 py-8 mb-8">
+                        <div class="flex flex-col gap-2">
+                            <h2 class="text-slate-900 dark:text-white tracking-tight text-3xl font-black leading-tight">
+                                Learning Experience Includes
+                            </h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-base">Everything you need to succeed in
+                                your career journey.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                            <!-- Feature 1 -->
+                            <a href="AIlearning.html" target="">
+                                <div
+                                    class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 flex-col shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="text-primary p-2 bg-primary/10 w-fit rounded-lg" data-icon="smart_toy">
+                                        <span class="material-symbols-outlined text-[28px]">smart_toy</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            AI-Based Personalized Path</h3>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">
+                                            Adaptive curriculum tailored to you</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Feature 2 -->
+                            <a href="Online.html" target="_blank">
+                                <div
+                                    class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 flex-col shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="text-primary p-2 bg-primary/10 w-fit rounded-lg" data-icon="school">
+                                        <span class="material-symbols-outlined text-[28px]">school</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+
+                                        <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            Online Batch</h3>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">
+                                            Expert Mentors &amp; Trainers Guidance from industry leaders</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Feature 3 -->
+                            <a href="Offline.html" target="_blank">
+                                <div
+                                    class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 flex-col shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="text-primary p-2 bg-primary/10 w-fit rounded-lg" data-icon="code">
+                                        <span class="material-symbols-outlined text-[28px]">code</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            Offline Batch</h3>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">
+                                            Hands-on Projects Build real-world applications</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Feature 4 -->
+                            <a href="Hybrid.html" target="_blank">
+                                <div
+                                    class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 flex-col shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="text-primary p-2 bg-primary/10 w-fit rounded-lg" data-icon="bar_chart">
+                                        <span class="material-symbols-outlined text-[28px]">bar_chart</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            Hybrid Batch</h3>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">
+                                            Skill Progress Tracking Monitor growth with analytics</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Feature 5 -->
+                            <a href="Counsellor.html" target="_blank">
+                                <div
+                                    class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 flex-col shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="text-primary p-2 bg-primary/10 w-fit rounded-lg" data-icon="ads_click">
+                                        <span class="material-symbols-outlined text-[28px]">ads_click</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            Career &amp; Placement Officer Or Counsellor</h3>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">
+                                            Dedicated support for jobs</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Page Heading -->
+                    <div class="flex flex-wrap justify-between gap-6 pb-8">
+                        <div class="flex min-w-72 flex-col gap-3">
+                            <h1
+                                class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                                Learning Paths &amp; Experience
+                            </h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-normal max-w-2xl">
+                                Explore AI-based learning paths designed for career building, upskilling, and modular
+                                learning tailored to your goals.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Accordions Section -->
+                    <div class="flex flex-col gap-4">
+                        <!-- Accordion 1: Career Learning Paths -->
+                        <details
+                            class="flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm group overflow-hidden transition-all duration-300"
+                            open="">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between gap-4 p-5 md:p-6 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="hidden sm:flex items-center justify-center size-12 rounded-lg bg-blue-100 text-primary dark:bg-primary/20 dark:text-primary-light">
+                                        <span class="material-symbols-outlined text-[28px]">rocket_launch</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">
+                                            Career Learning Paths</h3>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Career
+                                            Building – From Beginner to Job-Ready</p>
+                                    </div>
+                                </div>
+                                <div class="text-slate-400 group-open:rotate-180 transition-transform duration-300">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </summary>
+                            <div
+                                class="border-t border-slate-100 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50 p-6 md:p-8">
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                    <!-- Column 1 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">What You Will
+                                                Learn</h4>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Programming
+                                                Fundamentals</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Web
+                                                Development</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Core
+                                                Computer Science</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Database
+                                                &amp; Backend</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Real-world
+                                                Projects</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Interview
+                                                Prep</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Column 2 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">work</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Career
+                                                Options Covered</h4>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">Software
+                                                Developer</span>
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">Web
+                                                Developer</span>
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">Data
+                                                Analyst</span>
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">AI/ML
+                                                Engineer</span>
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">Cloud
+                                                Engineer</span>
+                                            <span
+                                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200">Cybersecurity
+                                                Analyst</span>
+                                        </div>
+                                    </div>
+                                    <!-- Column 3 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">settings_accessibility</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Learning
+                                                Modes</h4>
+                                        </div>
+                                        <ul class="space-y-3">
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                AI-Based Personalized Learning
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Online Batch
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Offline Batch
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Hybrid Mode (Online + Offline)
+                                            </li>
+                                        </ul>
+                                        <a href="Pay.html" target="_blank"><button
+                                                class="mt-4 w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                                Explore Career Paths
+                                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                            </button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- Accordion 2: Upskilling Learning Paths -->
+                        <details
+                            class="flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm group overflow-hidden transition-all duration-300">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between gap-4 p-5 md:p-6 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="hidden sm:flex items-center justify-center size-12 rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300">
+                                        <span class="material-symbols-outlined text-[28px]">trending_up</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">
+                                            Upskilling Learning Paths</h3>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Skill
+                                            Enhancement for Professionals &amp; Experienced Learners</p>
+                                    </div>
+                                </div>
+                                <div class="text-slate-400 group-open:rotate-180 transition-transform duration-300">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </summary>
+                            <div
+                                class="border-t border-slate-100 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50 p-6 md:p-8">
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                    <!-- Column 1 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">What You Will
+                                                Learn</h4>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Advanced
+                                                Programming</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Full-Stack
+                                                Dev</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Cloud
+                                                Technologies</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>DevOps
+                                            </li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Data
+                                                Analytics</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Generative
+                                                AI</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Column 2 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Upskilling
+                                                Areas</h4>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <div
+                                                class="flex items-center gap-3 p-2 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <span
+                                                    class="material-symbols-outlined text-slate-400 text-[20px]">upgrade</span>
+                                                <span
+                                                    class="text-sm font-medium text-slate-700 dark:text-slate-200">Technical
+                                                    Skill Upgrade</span>
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 p-2 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <span
+                                                    class="material-symbols-outlined text-slate-400 text-[20px]">stairs</span>
+                                                <span
+                                                    class="text-sm font-medium text-slate-700 dark:text-slate-200">Career
+                                                    Growth</span>
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 p-2 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <span
+                                                    class="material-symbols-outlined text-slate-400 text-[20px]">swap_horiz</span>
+                                                <span
+                                                    class="text-sm font-medium text-slate-700 dark:text-slate-200">Domain
+                                                    Switching</span>
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 p-2 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <span
+                                                    class="material-symbols-outlined text-slate-400 text-[20px]">construction</span>
+                                                <span
+                                                    class="text-sm font-medium text-slate-700 dark:text-slate-200">Industry
+                                                    Tools</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Column 3 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">settings_accessibility</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Learning
+                                                Modes</h4>
+                                        </div>
+                                        <ul class="space-y-3">
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                AI-Based Skill Assessment
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Online Batch
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Offline Batch
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Hybrid Mode (Flexible)
+                                            </li>
+                                        </ul>
+                                        <a href="Pay1.html" target="_blank"><button
+                                                class="mt-4 w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                                Start Upskilling
+                                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                            </button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- Accordion 3: Modular Learning Paths -->
+                        <details
+                            class="flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm group overflow-hidden transition-all duration-300">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between gap-4 p-5 md:p-6 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="hidden sm:flex items-center justify-center size-12 rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300">
+                                        <span class="material-symbols-outlined text-[28px]">extension</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">
+                                            Modular Learning Paths</h3>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Flexible,
+                                            Skill-Based &amp; Stackable Learning</p>
+                                    </div>
+                                </div>
+                                <div class="text-slate-400 group-open:rotate-180 transition-transform duration-300">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </summary>
+                            <div
+                                class="border-t border-slate-100 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50 p-6 md:p-8">
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                    <!-- Column 1 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">What You Will
+                                                Learn</h4>
+                                        </div>
+                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Foundation
+                                                Modules</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Core
+                                                Skill Modules</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Advanced
+                                                Modules</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Real-World
+                                                Projects</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Capstone
+                                                Project</li>
+                                            <li class="flex items-start gap-2"><span
+                                                    class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>Career
+                                                Readiness</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Column 2 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">star</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Modular
+                                                Benefits</h4>
+                                        </div>
+                                        <div class="grid grid-cols-1 gap-3">
+                                            <div
+                                                class="flex gap-3 p-3 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <div
+                                                    class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded p-1 h-fit">
+                                                    <span class="material-symbols-outlined text-[18px]">speed</span>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-sm font-bold text-slate-800 dark:text-white">Learn
+                                                        at Your Own Pace</span>
+                                                    <span class="text-xs text-slate-500 dark:text-slate-400">Balance
+                                                        learning with work</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="flex gap-3 p-3 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <div
+                                                    class="bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded p-1 h-fit">
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]">filter_alt</span>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span
+                                                        class="text-sm font-bold text-slate-800 dark:text-white">Choose
+                                                        Required Skills</span>
+                                                    <span class="text-xs text-slate-500 dark:text-slate-400">Pay only
+                                                        for what you need</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="flex gap-3 p-3 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-lg">
+                                                <div
+                                                    class="bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 rounded p-1 h-fit">
+                                                    <span class="material-symbols-outlined text-[18px]">layers</span>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-sm font-bold text-slate-800 dark:text-white">Stack
+                                                        Modules</span>
+                                                    <span class="text-xs text-slate-500 dark:text-slate-400">Build
+                                                        towards a degree</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Column 3 -->
+                                    <div class="flex flex-col gap-3">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">settings_accessibility</span>
+                                            <h4 class="text-slate-900 dark:text-white font-bold text-base">Learning
+                                                Modes</h4>
+                                        </div>
+                                        <ul class="space-y-3">
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                AI-Based Adaptive Learning
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Online Self-Paced + Batch
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Offline Classroom Modules
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700/50 p-2 rounded border border-slate-100 dark:border-slate-700">
+                                                <span
+                                                    class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                                Hybrid Learning Model
+                                            </li>
+                                        </ul>
+                                        <a href="Pay2.html"><button
+                                                class="mt-4 w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                                Build Your Path
+                                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                            </button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Footer -->
+                    <footer
+                        class="flex flex-col gap-6 px-5 py-10 border-t border-slate-200 dark:border-slate-700 text-center mt-auto">
+                        <div class="flex flex-wrap items-center justify-center gap-6">
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors min-w-40"
+                                href="#">About Us</a>
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors min-w-40"
+                                href="#">Contact Support</a>
+                            <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors min-w-40"
+                                href="#">Privacy Policy</a>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+                                <span class="material-symbols-outlined text-[24px]">social_leaderboard</span>
+                            </a>
+                            <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+                                <span class="material-symbols-outlined text-[24px]">do_not_disturb_on</span>
+                            </a>
+                            <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+                                <span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+                            </a>
+                        </div>
+                        <p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal">© 2024 AI-TECH
+                            PRO LMS. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </main>
+        <!-- Fixed Continue button -->
+        <div class="relative bottom-6 left-1/2 z-50 transform -translate-x-1/2">
+            <a href="A5Dashboard.html"
+                class="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg transition-colors">
+                Continue
+                <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/student-profile.js"></script>
+    <script>
+        // Load user name and ID from localStorage
+        document.addEventListener('DOMContentLoaded', function () {
+            const studentProfile = localStorage.getItem('studentProfile');
+
+            if (studentProfile) {
+                try {
+                    const profile = JSON.parse(studentProfile);
+
+                    // Update full name display
+                    const fullNameEl = document.getElementById('user-fullname');
+                    if (fullNameEl && profile.fullName) {
+                        fullNameEl.textContent = profile.fullName;
+                    }
+
+                    // Update avatar with initials
+                    const avatarEl = document.getElementById('user-avatar');
+                    if (avatarEl && profile.firstName && profile.lastName) {
+                        const initials = `${profile.firstName.charAt(0)}${profile.lastName.charAt(0)}`.toUpperCase();
+                        avatarEl.innerHTML = `<span class="text-sm font-bold">${initials}</span>`;
+                    }
+
+                    // Add student ID below name
+                    if (profile.id && fullNameEl) {
+                        const idBadge = document.createElement('span');
+                        idBadge.className = 'text-xs font-mono text-slate-500 dark:text-slate-400';
+                        idBadge.textContent = `ID: ${profile.id}`;
+                        fullNameEl.parentNode.appendChild(idBadge);
+                    }
+                } catch (e) {
+                    console.error('Error parsing student profile:', e);
+                }
+            } else {
+                // Fallback to old format
+                const firstName = localStorage.getItem('userFirstName');
+                const lastName = localStorage.getItem('userLastName');
+
+                if (firstName && lastName) {
+                    const fullNameEl = document.getElementById('user-fullname');
+                    if (fullNameEl) {
+                        fullNameEl.textContent = `${firstName} ${lastName}`;
+                    }
+
+                    const avatarEl = document.getElementById('user-avatar');
+                    if (avatarEl) {
+                        const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
+                        avatarEl.innerHTML = `<span class="text-sm font-bold">${initials}</span>`;
+                    }
+                }
+            }
+
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to logout?')) {
+                        // Clear student profile from localStorage
+                        localStorage.removeItem('studentProfile');
+                        localStorage.removeItem('userFirstName');
+                        localStorage.removeItem('userLastName');
+
+                        // Show logout message
+                        alert('✅ Logged out successfully!');
+
+                        // Redirect to enrollment form
+                        window.location.href = 'Studentform.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

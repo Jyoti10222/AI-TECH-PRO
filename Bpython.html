@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Full Stack - AI-TECH PRO</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1c2936",
+                        "border-dark": "#233648",
+                        "text-secondary": "#92adc9"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111a22; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #233648; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #137fec; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid dark:border-border-dark bg-white dark:bg-background-dark px-6 py-3 lg:px-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">AI-TECH PRO</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8 items-center">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-text-secondary hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-text-secondary hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">My Courses</a>
+<a class="text-slate-600 dark:text-text-secondary hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Community</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+<span class="truncate">Dashboard</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 ring-2 ring-white/10" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZAkPCVH8F7bcNc05HBMIsVdHSpRnJ3my-upRws8o9fOSGZPjlIZR-O8w0fSV7d8Y0wHHluWhaAlxGvzJ81L0ldhWFABIg-oiZRDigB6lfHuLxWlIUmxIXm2IGmITuPr0ZDXoaVaVXNduLVwUyC9CnEcE9NWsJG0B4cgt1F4OfDhKtghSvDsNjxwgqOyI7cH05LvSXn-L6moi-PXWkWCIbLCj8BgQ3kDJJ28dUSOQIYl4edQ91kZQNb3Gp-iYOkXooFLozU3mw8w0");'></div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<div class="flex-1 flex flex-col max-w-[1600px] w-full mx-auto p-4 lg:p-8 gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-1">
+<a class="text-slate-500 dark:text-text-secondary text-sm lg:text-base font-medium hover:text-primary transition-colors" href="#">My Courses</a>
+<span class="text-slate-400 dark:text-text-secondary text-sm lg:text-base font-medium">/</span>
+<a class="text-slate-500 dark:text-text-secondary text-sm lg:text-base font-medium hover:text-primary transition-colors" href="#">Python Full Stack</a>
+<span class="text-slate-400 dark:text-text-secondary text-sm lg:text-base font-medium">/</span>
+<span class="text-slate-900 dark:text-white text-sm lg:text-base font-medium">Module 4: Django Framework</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full">
+<!-- Sidebar (Left) -->
+<div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-4 h-fit lg:h-[calc(100vh-180px)] lg:sticky lg:top-24">
+<div class="flex items-center justify-between pb-2 border-b dark:border-border-dark">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Course Content</h3>
+<span class="text-xs font-medium text-green-500 bg-green-500/10 px-2 py-1 rounded">25% Complete</span>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto custom-scrollbar pr-2 pb-10">
+<!-- Module 1: Completed -->
+<details class="flex flex-col rounded-lg border dark:border-border-dark bg-white dark:bg-background-dark px-[15px] py-[7px] group">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Module 1: Introduction</p>
+</div>
+<div class="text-slate-500 dark:text-text-secondary group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="pl-8 pt-1 pb-2 flex flex-col gap-2">
+<a class="text-slate-500 dark:text-text-secondary hover:text-primary text-xs flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">play_circle</span> Welcome
+                            </a>
+<a class="text-slate-500 dark:text-text-secondary hover:text-primary text-xs flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">play_circle</span> Setup Guide
+                            </a>
+</div>
+</details>
+<!-- Module 2: Completed -->
+<details class="flex flex-col rounded-lg border dark:border-border-dark bg-white dark:bg-background-dark px-[15px] py-[7px] group">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Module 2: Python Basics</p>
+</div>
+<div class="text-slate-500 dark:text-text-secondary group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="pl-8 pt-1 pb-2 flex flex-col gap-2">
+<a class="text-slate-500 dark:text-text-secondary hover:text-primary text-xs flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">play_circle</span> Variables
+                            </a>
+<a class="text-slate-500 dark:text-text-secondary hover:text-primary text-xs flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">play_circle</span> Loops
+                            </a>
+</div>
+</details>
+<!-- Module 3: Locked -->
+<details class="flex flex-col rounded-lg border dark:border-border-dark bg-white dark:bg-background-dark px-[15px] py-[7px] group">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<p class="text-slate-500 dark:text-slate-300 text-sm font-medium leading-normal">Module 3: Advanced Python</p>
+</div>
+<div class="text-slate-500 dark:text-text-secondary group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="pl-8 pt-1 pb-2">
+<p class="text-slate-400 text-xs italic">Content locked</p>
+</div>
+</details>
+<!-- Module 4: Current & Locked -->
+<details class="flex flex-col rounded-lg border border-primary/50 bg-primary/5 dark:bg-primary/10 px-[15px] py-[7px] group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<p class="text-primary font-semibold text-sm leading-normal">Module 4: Django Framework</p>
+</div>
+<div class="text-primary group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="pl-8 pt-1 pb-2 flex flex-col gap-3 mt-2">
+<div class="flex items-center justify-between text-slate-500 dark:text-text-secondary text-xs opacity-50 cursor-not-allowed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>4.1 Virtual Env Setup</span>
+</div>
+<span class="text-[10px] border border-slate-700 px-1 rounded">PREVIEW</span>
+</div>
+<div class="flex items-center justify-between text-white text-xs font-medium cursor-pointer bg-primary/20 -mx-4 px-4 py-2 border-l-2 border-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">play_circle</span>
+<span>4.2 First Project</span>
+</div>
+<span class="text-[10px] bg-primary text-white px-1.5 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">lock</span> LOCKED
+                                </span>
+</div>
+<div class="flex items-center justify-between text-slate-500 dark:text-text-secondary text-xs opacity-50 cursor-not-allowed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>4.3 URL Routing</span>
+</div>
+</div>
+</div>
+</details>
+<!-- Module 5: Locked -->
+<details class="flex flex-col rounded-lg border dark:border-border-dark bg-white dark:bg-background-dark px-[15px] py-[7px] group">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<p class="text-slate-500 dark:text-slate-300 text-sm font-medium leading-normal">Module 5: REST APIs</p>
+</div>
+<div class="text-slate-500 dark:text-text-secondary group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="pl-8 pt-1 pb-2">
+<p class="text-slate-400 text-xs italic">Content locked</p>
+</div>
+</details>
+</div>
+</div>
+<!-- Main Content (Video Player & Info) -->
+<div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-8">
+<!-- Player Container with Paywall -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-black group border dark:border-border-dark">
+<!-- Background Image (Blurred) -->
+<div class="absolute inset-0 bg-cover bg-center blur-sm opacity-60 scale-105" data-alt="Blurred code editor showing python Django code" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIiIEvtxXPQ9rRxxR8t6e810SjfJAWZpkSZrMc1JpJTNayFJ2BOiQAK2to5rAgVkoEhf8-CBW_tkd_IYQON7-JsVDXisf-yjvOJanyxUlI6amSdR36XlKZHAAArw5POx8urECAEZCbTQg678VTwN4MamOIgnxxIXbaNii2N0sfVSOs28sOWjTQ_2CpzKfJlUAQuCdXhX3OERK0b6tRDKfC86QBB-hd-YHOD9B_B4T2q9GXl-p11jVQXH95D21HcEMej9nKKcIT9hg");'>
+</div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+<!-- Paywall Content Centered -->
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<div class="bg-white dark:bg-surface-dark border dark:border-border-dark rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full flex flex-col items-center text-center animate-fade-in-up">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-[32px]">lock</span>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Premium Access Required</h2>
+<p class="text-slate-500 dark:text-text-secondary text-sm mb-6">
+                                You've completed the free preview modules. Unlock the full <strong>Python Full Stack Masterclass</strong> to continue learning.
+                            </p>
+<!-- Currency Toggle -->
+<div class="flex p-1 bg-slate-100 dark:bg-background-dark rounded-lg mb-6 w-full max-w-[200px]">
+<label class="flex-1 text-center cursor-pointer">
+<input checked="" class="peer sr-only" name="currency" type="radio" value="USD"/>
+<span class="block py-1.5 px-3 rounded-md text-xs font-bold text-slate-500 dark:text-text-secondary peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:text-primary peer-checked:shadow-sm transition-all">USD ($)</span>
+</label>
+<label class="flex-1 text-center cursor-pointer">
+<input class="peer sr-only" name="currency" type="radio" value="INR"/>
+<span class="block py-1.5 px-3 rounded-md text-xs font-bold text-slate-500 dark:text-text-secondary peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:text-primary peer-checked:shadow-sm transition-all">INR (₹)</span>
+</label>
+</div>
+<!-- Pricing -->
+<div class="flex items-end gap-3 mb-6">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">$19.99</span>
+<span class="text-lg text-slate-400 line-through decoration-red-500 decoration-2 mb-1">$99.99</span>
+<span class="text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded mb-1">80% OFF</span>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-blue-500/30 transition-all flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+                                Unlock Full Course
+                            </button>
+<div class="flex items-center gap-4 text-[10px] text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified_user</span> Secure Payment</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">all_inclusive</span> Lifetime Access</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Why Upgrade Section -->
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Why upgrade to Premium?</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Benefit 1 -->
+<div class="bg-white dark:bg-surface-dark border dark:border-border-dark p-6 rounded-xl flex flex-col gap-3 hover:border-primary/50 transition-colors group">
+<div class="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-base">Certified Completion</h4>
+<p class="text-sm text-slate-500 dark:text-text-secondary mt-1">Earn an industry-recognized certificate to showcase on your LinkedIn profile.</p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-white dark:bg-surface-dark border dark:border-border-dark p-6 rounded-xl flex flex-col gap-3 hover:border-primary/50 transition-colors group">
+<div class="size-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">cloud_download</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-base">Download Resources</h4>
+<p class="text-sm text-slate-500 dark:text-text-secondary mt-1">Get access to 50+ downloadable cheat sheets, source code files, and project assets.</p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-white dark:bg-surface-dark border dark:border-border-dark p-6 rounded-xl flex flex-col gap-3 hover:border-primary/50 transition-colors group">
+<div class="size-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-base">Mentor Support</h4>
+<p class="text-sm text-slate-500 dark:text-text-secondary mt-1">Stuck on a bug? Get priority support from our expert mentors within 24 hours.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

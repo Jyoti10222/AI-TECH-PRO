@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Courses Admin - AI-TECH PRO LMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left h1 {
+            color: #1a1a2e;
+            font-size: 1.75rem;
+        }
+
+        .header-left p {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-add {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-add:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .course-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .course-id {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            color: #667eea;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-save:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-msg {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .status-msg.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-msg.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .material-symbols-outlined {
+            font-size: 20px;
+            vertical-align: middle;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 50;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            margin: 1rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+            color: #1a1a2e;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 0.875rem;
+            background: #f1f5f9;
+            color: #64748b;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            flex: 1;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>🎓 Hybrid Courses Admin</h1>
+                <p>Manage hybrid batch courses - changes reflect instantly on the frontend</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-add" onclick="showAddCourseModal()">
+                    <span class="material-symbols-outlined">add</span>
+                    Add Course
+                </button>
+                <a href="Hybrid.html" class="nav-link" target="_blank">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                    View Hybrid Page
+                </a>
+            </div>
+        </header>
+
+        <div id="courses-container" class="courses-grid">
+            <div class="loading">Loading courses...</div>
+        </div>
+    </div>
+
+    <!-- Add Course Modal -->
+    <div id="add-course-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="material-symbols-outlined" style="color: #22c55e; font-size: 28px;">add_circle</span>
+                <h3>Add New Hybrid Course</h3>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Course Name *</label>
+                    <input type="text" id="new-course-name" placeholder="Enter course name">
+                </div>
+                <div class="form-group">
+                    <label>Instructor</label>
+                    <input type="text" id="new-course-instructor" placeholder="Instructor name">
+                </div>
+            </div>
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label>Fee ($)</label>
+                    <input type="number" id="new-course-fee" value="999">
+                </div>
+                <div class="form-group">
+                    <label>Level</label>
+                    <select id="new-course-level" title="Course difficulty level">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="text" id="new-course-startDate" value="Jan 2026">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Online %</label>
+                    <input type="number" id="new-course-onlinePercent" value="50" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label>Offline %</label>
+                    <input type="number" id="new-course-offlinePercent" value="50" min="0" max="100">
+                </div>
+            </div>
+            <div class="form-row" style="margin-top: 1.5rem; gap: 1rem;">
+                <button class="btn-cancel" onclick="hideAddCourseModal()">Cancel</button>
+                <button class="btn-submit" onclick="addNewCourse()">Add Course</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api/hybrid-config';
+        let coursesData = [];
+
+        async function loadCourses() {
+            const container = document.getElementById('courses-container');
+            try {
+                const response = await fetch(API_BASE);
+                const result = await response.json();
+
+                if (result.success && result.data.courses) {
+                    coursesData = result.data.courses;
+                    renderCourseCards(coursesData);
+                } else {
+                    container.innerHTML = '<div class="loading">Failed to load courses</div>';
+                }
+            } catch (error) {
+                container.innerHTML = `
+                    <div class="loading">
+                        <p>Unable to connect to backend server</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Run: <code>cd backend && node server.js</code></p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderCourseCards(courses) {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = courses.map((course, index) => `
+                <div class="course-card" id="card-${course.id}">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <div>
+                            <div class="course-title">${course.name}</div>
+                            <div class="course-id">ID: ${course.id}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-name">Course Name</label>
+                            <input type="text" id="${course.id}-name" value="${course.name}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-instructor">Instructor</label>
+                            <input type="text" id="${course.id}-instructor" value="${course.instructor}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="${course.id}-fee">Fee ($)</label>
+                            <input type="number" id="${course.id}-fee" value="${course.fee}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-level">Level</label>
+                            <select id="${course.id}-level" title="Course difficulty level">
+                                <option value="Beginner" ${course.level === 'Beginner' ? 'selected' : ''}>Beginner</option>
+                                <option value="Intermediate" ${course.level === 'Intermediate' ? 'selected' : ''}>Intermediate</option>
+                                <option value="Advanced" ${course.level === 'Advanced' ? 'selected' : ''}>Advanced</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-startDate">Start Date</label>
+                            <input type="text" id="${course.id}-startDate" value="${course.startDate}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-onlinePercent">Online %</label>
+                            <input type="number" id="${course.id}-onlinePercent" value="${course.onlinePercent}" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-offlinePercent">Offline %</label>
+                            <input type="number" id="${course.id}-offlinePercent" value="${course.offlinePercent}" min="0" max="100">
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Online Schedule</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-onlineDays">Days</label>
+                            <input type="text" id="${course.id}-onlineDays" value="${course.onlineSchedule.days}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-onlineTime">Time</label>
+                            <input type="text" id="${course.id}-onlineTime" value="${course.onlineSchedule.time}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-onlinePlatform">Platform</label>
+                            <input type="text" id="${course.id}-onlinePlatform" value="${course.onlineSchedule.platform}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-onlineDesc">Description</label>
+                            <input type="text" id="${course.id}-onlineDesc" value="${course.onlineSchedule.description}">
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Offline Schedule</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-offlineDays">Days</label>
+                            <input type="text" id="${course.id}-offlineDays" value="${course.offlineSchedule.days}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-offlineTime">Time</label>
+                            <input type="text" id="${course.id}-offlineTime" value="${course.offlineSchedule.time}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="${course.id}-offlineLocation">Location</label>
+                            <input type="text" id="${course.id}-offlineLocation" value="${course.offlineSchedule.location}">
+                        </div>
+                        <div class="form-group">
+                            <label for="${course.id}-offlineDesc">Description</label>
+                            <input type="text" id="${course.id}-offlineDesc" value="${course.offlineSchedule.description}">
+                        </div>
+                    </div>
+                    
+                    <button class="btn-save" onclick="saveCourse('${course.id}')">
+                        <span class="material-symbols-outlined">save</span>
+                        Save Changes
+                    </button>
+                    <div id="${course.id}-status"></div>
+                </div>
+            `).join('');
+        }
+
+        async function saveCourse(courseId) {
+            const statusEl = document.getElementById(`${courseId}-status`);
+            const btn = document.querySelector(`#card-${courseId} .btn-save`);
+
+            const levelValue = document.getElementById(`${courseId}-level`).value;
+            const levelColor = levelValue === 'Advanced' ? 'purple' : 'green';
+
+            const updatedCourse = {
+                name: document.getElementById(`${courseId}-name`).value,
+                instructor: document.getElementById(`${courseId}-instructor`).value,
+                fee: parseInt(document.getElementById(`${courseId}-fee`).value),
+                level: levelValue,
+                levelColor: levelColor,
+                startDate: document.getElementById(`${courseId}-startDate`).value,
+                onlinePercent: parseInt(document.getElementById(`${courseId}-onlinePercent`).value),
+                offlinePercent: parseInt(document.getElementById(`${courseId}-offlinePercent`).value),
+                onlineSchedule: {
+                    days: document.getElementById(`${courseId}-onlineDays`).value,
+                    time: document.getElementById(`${courseId}-onlineTime`).value,
+                    platform: document.getElementById(`${courseId}-onlinePlatform`).value,
+                    description: document.getElementById(`${courseId}-onlineDesc`).value,
+                    platformNote: coursesData.find(c => c.id === courseId)?.onlineSchedule?.platformNote || ''
+                },
+                offlineSchedule: {
+                    days: document.getElementById(`${courseId}-offlineDays`).value,
+                    time: document.getElementById(`${courseId}-offlineTime`).value,
+                    location: document.getElementById(`${courseId}-offlineLocation`).value,
+                    description: document.getElementById(`${courseId}-offlineDesc`).value,
+                    locationNote: coursesData.find(c => c.id === courseId)?.offlineSchedule?.locationNote || ''
+                }
+            };
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined">sync</span> Saving...';
+
+            try {
+                const response = await fetch(`${API_BASE}/course/${courseId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updatedCourse)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    statusEl.innerHTML = '<div class="status-msg success">✓ Course updated successfully!</div>';
+                    const idx = coursesData.findIndex(c => c.id === courseId);
+                    if (idx !== -1) coursesData[idx] = { ...coursesData[idx], ...updatedCourse };
+                } else {
+                    statusEl.innerHTML = '<div class="status-msg error">✗ Failed to update course</div>';
+                }
+            } catch (error) {
+                statusEl.innerHTML = '<div class="status-msg error">✗ Network error</div>';
+            }
+
+            btn.disabled = false;
+            btn.innerHTML = '<span class="material-symbols-outlined">save</span> Save Changes';
+
+            setTimeout(() => { statusEl.innerHTML = ''; }, 3000);
+        }
+
+        function showAddCourseModal() {
+            document.getElementById('add-course-modal').classList.add('show');
+            document.getElementById('new-course-name').value = '';
+            document.getElementById('new-course-instructor').value = '';
+        }
+
+        function hideAddCourseModal() {
+            document.getElementById('add-course-modal').classList.remove('show');
+        }
+
+        async function addNewCourse() {
+            const name = document.getElementById('new-course-name').value.trim();
+            if (!name) {
+                alert('Course name is required');
+                return;
+            }
+
+            const newCourse = {
+                name,
+                instructor: document.getElementById('new-course-instructor').value || 'TBD',
+                fee: parseInt(document.getElementById('new-course-fee').value) || 999,
+                level: document.getElementById('new-course-level').value,
+                startDate: document.getElementById('new-course-startDate').value,
+                onlinePercent: parseInt(document.getElementById('new-course-onlinePercent').value) || 50,
+                offlinePercent: parseInt(document.getElementById('new-course-offlinePercent').value) || 50
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/course`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newCourse)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    hideAddCourseModal();
+                    loadCourses();
+                } else {
+                    alert(result.message || 'Failed to add course');
+                }
+            } catch (error) {
+                alert('Network error - make sure backend is running');
+            }
+        }
+
+        // Load courses on page load
+        document.addEventListener('DOMContentLoaded', loadCourses);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organization Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display h-screen overflow-hidden flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-[#1a2632] border-r border-slate-200 dark:border-slate-800 flex flex-col flex-shrink-0 z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary/10 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">LMS Admin</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Enterprise Edition</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-4 px-4 flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined fill-1">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</div>
+<a href="A16Users.html" target="_blank">
+    <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Users</p>
+</div>
+</a>
+
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">library_books</span>
+<p class="text-sm font-medium">Content</p>
+</div>
+<a href="A16Analytics.html" target="_blank"><div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">monitoring</span>
+<p class="text-sm font-medium">Analytics</p>
+</div></a>
+
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">credit_card</span>
+<p class="text-sm font-medium">Billing</p>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase mb-2">Support</p>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">help</span>
+<p class="text-sm font-medium">Help Center</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center border border-slate-200 dark:border-slate-700" data-alt="User profile avatar placeholder showing initials or abstract face" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBqFvPv5xPN493TLv1SjrbdVG7r1_e8yKwlJLi7azE7cJMRlyEH2DU0zm0KUi0kHFqjgzzuHg1KelTK0tlFOm37Kf2vNkQHkUXd8rjH4iif2WZK1fd8CEa4kqgvIIHU_jGod8J_B6pcMyAg1Ey4T_k9E2bbHqBuarBb1T8sbOefBz0ICVsi5j_0I98l9LkV92oZmNfQxKBCFpLHsyxwaFmw-Yl6L9s_tuuqvQa4Oz94ama34jCyGs4jHZ8f2ffjCtHtCAefRKiVHc");'></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-medium truncate dark:text-white">Jane Doe</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Acme Corp Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Top Nav -->
+<header class="h-16 flex items-center justify-between px-6 bg-white dark:bg-[#1a2632] border-b border-slate-200 dark:border-slate-800 z-10 flex-shrink-0">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Overview</h2>
+<div class="hidden md:flex h-9 items-center rounded-lg bg-slate-100 dark:bg-slate-800 px-3 w-64 lg:w-80">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+<input class="bg-transparent border-none text-sm w-full focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 h-full" placeholder="Search users, courses, reports..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 border border-white dark:border-[#1a2632]"></span>
+</button>
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="hidden sm:inline">Create Course</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-6 md:p-8">
+<div class="max-w-7xl mx-auto space-y-6">
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">group</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Learners</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">1,240</h3>
+<span class="flex items-center text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                12%
+                            </span>
+</div>
+<p class="text-xs text-slate-400 mt-2">vs. last month</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-purple-500">verified</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Completion Rate</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">78%</h3>
+<span class="flex items-center text-xs font-semibold text-rose-600 bg-rose-50 dark:bg-rose-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_down</span>
+                                2%
+                            </span>
+</div>
+<p class="text-xs text-slate-400 mt-2">vs. last month</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-orange-500">quiz</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Avg. Assessment Score</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">85%</h3>
+<span class="flex items-center text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                5%
+                            </span>
+</div>
+<p class="text-xs text-slate-400 mt-2">vs. last month</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-blue-500">card_membership</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Licenses Used</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">90%</h3>
+<span class="flex items-center text-xs font-semibold text-slate-500 bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded">
+                                0%
+                            </span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-orange-500 h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column (Chart & Table) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Chart Widget -->
+<div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Learning Engagement Trends</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Hours learned per week</p>
+</div>
+<div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+<button class="px-3 py-1 text-xs font-medium bg-white dark:bg-[#1a2632] text-slate-900 dark:text-white rounded shadow-sm">Weekly</button>
+<button class="px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Monthly</button>
+</div>
+</div>
+<!-- CSS Bar Chart Representation -->
+<div class="h-64 flex items-end justify-between gap-2 sm:gap-4 w-full">
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-primary/20 dark:bg-primary/20 rounded-t-sm h-[40%] group-hover:bg-primary/40 transition-all relative"></div>
+<span class="text-xs text-slate-400">Mon</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-primary/40 dark:bg-primary/30 rounded-t-sm h-[65%] group-hover:bg-primary/60 transition-all"></div>
+<span class="text-xs text-slate-400">Tue</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-primary rounded-t-sm h-[85%] group-hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"></div>
+<span class="text-xs text-slate-400 font-semibold text-primary">Wed</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-primary/60 dark:bg-primary/50 rounded-t-sm h-[55%] group-hover:bg-primary/80 transition-all"></div>
+<span class="text-xs text-slate-400">Thu</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-primary/30 dark:bg-primary/25 rounded-t-sm h-[45%] group-hover:bg-primary/50 transition-all"></div>
+<span class="text-xs text-slate-400">Fri</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-slate-200 dark:bg-slate-700 rounded-t-sm h-[20%] group-hover:bg-slate-300 transition-all"></div>
+<span class="text-xs text-slate-400">Sat</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-full">
+<div class="w-full max-w-[40px] bg-slate-200 dark:bg-slate-700 rounded-t-sm h-[15%] group-hover:bg-slate-300 transition-all"></div>
+<span class="text-xs text-slate-400">Sun</span>
+</div>
+</div>
+</div>
+<!-- Top Courses Table -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Top Performing Courses</h3>
+<a class="text-sm text-primary font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-3">Course Name</th>
+<th class="px-6 py-3">Instructor</th>
+<th class="px-6 py-3 text-right">Enrolled</th>
+<th class="px-6 py-3 text-right">Rating</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">security</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white">Cybersecurity Basics</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Dr. Sarah Smith</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-white text-right font-medium">450</td>
+<td class="px-6 py-4 text-sm text-right">
+<div class="flex items-center justify-end gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[16px] fill-1">star</span>
+<span class="text-slate-700 dark:text-slate-300 font-medium">4.9</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white">Advanced Python</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Mark Johnson</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-white text-right font-medium">328</td>
+<td class="px-6 py-4 text-sm text-right">
+<div class="flex items-center justify-end gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[16px] fill-1">star</span>
+<span class="text-slate-700 dark:text-slate-300 font-medium">4.7</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">psychology</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white">Leadership 101</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Emily Davis</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-white text-right font-medium">215</td>
+<td class="px-6 py-4 text-sm text-right">
+<div class="flex items-center justify-end gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[16px] fill-1">star</span>
+<span class="text-slate-700 dark:text-slate-300 font-medium">4.8</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column (AI, Alerts, Quick Actions) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Quick Actions -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="h-10 w-10 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Invite User</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="h-10 w-10 rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">assignment_add</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Assign Course</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="h-10 w-10 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">download</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Export Report</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="h-10 w-10 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Config</span>
+</button>
+</div>
+<!-- AI Insights -->
+<div class="bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-950/30 dark:to-[#1a2632] p-5 rounded-xl border border-indigo-100 dark:border-indigo-900 shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 text-indigo-100 dark:text-indigo-900/20">
+<span class="material-symbols-outlined text-[120px]">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400">auto_awesome</span>
+<h4 class="font-bold text-indigo-900 dark:text-indigo-100 text-sm">AI Insight</h4>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                    Engagement is unusually low in <span class="font-semibold">'Compliance 101'</span> this week. 
+                                </p>
+<button class="mt-4 w-full bg-white dark:bg-indigo-900/50 border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300 py-2 px-3 rounded-lg text-xs font-bold hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors">
+                                    Send Reminder to 45 Users
+                                </button>
+</div>
+</div>
+<!-- Alerts Panel -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex-1 flex flex-col">
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Critical Alerts</h3>
+<span class="px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-bold">3 New</span>
+</div>
+<div class="p-2 space-y-1">
+<div class="flex gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg cursor-pointer transition-colors group">
+<div class="text-red-500 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">License Utilization High</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">90% of licenses allocated. Purchase more to avoid interruption.</p>
+<p class="text-[10px] text-slate-400 mt-2">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg cursor-pointer transition-colors group">
+<div class="text-amber-500 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">timer_off</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">5 Licenses Expiring</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Renew before Nov 30 to maintain access for Dev Team.</p>
+<p class="text-[10px] text-slate-400 mt-2">1 day ago</p>
+</div>
+</div>
+<div class="flex gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg cursor-pointer transition-colors group">
+<div class="text-blue-500 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">New Feature Added</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Custom reporting is now available in your plan.</p>
+<p class="text-[10px] text-slate-400 mt-2">3 days ago</p>
+</div>
+</div>
+</div>
+<div class="p-3 mt-auto border-t border-slate-200 dark:border-slate-800 text-center">
+<button class="text-xs text-slate-500 hover:text-primary font-medium">View All Notifications</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-12 mb-6 text-center">
+<p class="text-xs text-slate-400">© 2024 Acme Corp LMS. All rights reserved.</p>
+</footer>
+</div>
+</main>
+</body></html>

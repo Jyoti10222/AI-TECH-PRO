@@ -1,0 +1,142 @@
+{
+  "pageInfo": {
+    "title": "Hybrid Batch Enrollment",
+    "subtitle": "Combine the flexibility of online learning with hands-on offline sessions. Choose a batch that fits your lifestyle."
+  },
+  "courses": [
+    {
+      "id": "java-fullstack",
+      "name": "Java Full Stack Development",
+      "instructor": "Sarah Jenkins",
+      "level": "Beginner",
+      "levelColor": "green",
+      "startDate": "Oct 15",
+      "onlinePercent": 60,
+      "offlinePercent": 40,
+      "fee": 1299,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDLm39_AyR6rQo5vyxLxJv45wqd9ZwS9l5_Lb3wE4NI-S5Gipje6WYgyAG4fQXMHF3YjsnBk2gGWV_26wyJtwATnwcme11hNMVOQ-nQcx2nGfDGVwu9KNuecm09YEfczzZjIxf9AoAXGIkKCy9TJYE_lD2l8jw55EEdhQcQko_I2CJ7l4vcreo37RXUVdlVpBZGvEi9Fi0yIFxq6E41_My7B-JSbbh4OQJHln_GT-2bYbXMlF2K3jgWNCLlGjMz2OL5ajDIQuYyvCw",
+      "onlineSchedule": {
+        "description": "Live Interactive Lectures",
+        "platform": "Zoom Platform",
+        "platformNote": "Recordings available 24/7"
+      },
+      "offlineSchedule": {
+        "description": "Hands-on Lab Sessions",
+        "location": "Tech Hub, Building B",
+        "locationNote": "San Francisco Campus"
+      }
+    },
+    {
+      "id": "python-fullstack",
+      "name": "Python Full Stack Development",
+      "instructor": "Emily Chen",
+      "level": "Intermediate",
+      "levelColor": "green",
+      "startDate": "Oct 22",
+      "onlinePercent": 58,
+      "offlinePercent": 50,
+      "fee": 999,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCDnBj-jvlNyttGvT96uD4vfK9gHaGRm5bEroR-2N2CHtVzN9OTtxlEm5aRNcJbpIoXn1Uh5pFnMpREpIay0tlvE_PRqvEpGxpvzat0W-Nqq9PsDtILr36c0oob6UMyc0-1Dubjepmj6R4koZedQvhxYvgKXWL1fG4dvHwvWA5OqTul855eoOEcqZ-li9JO9HNgMXszcW8oHP7jCjROmZCMsdL26mAYENLR3WOk7hVDxqPtzfdOemOCAXB-XkmuV_yGz_mfKIJc6Ug",
+      "onlineSchedule": {
+        "days": "undefined",
+        "time": "undefined",
+        "platform": "Google Meet",
+        "description": "Theory & Design Sessions",
+        "platformNote": "Resources shared via Drive"
+      },
+      "offlineSchedule": {
+        "days": "undefined",
+        "time": "undefined",
+        "location": "Innovation Lab",
+        "description": "Project Work Sessions",
+        "locationNote": "Tech Park Campus"
+      }
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "instructor": "Dr. A. Gupta",
+      "level": "Advanced",
+      "levelColor": "purple",
+      "startDate": "Nov 01",
+      "onlinePercent": 30,
+      "offlinePercent": 70,
+      "fee": 1899,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCf38maJiGQd66NP5AKRYYQtMKdNxHrVDXTduFSMPxT7IZvRlZ0_Gu94atge89YEGaGta4k9VrsTgZqjNhp2vIl9mrtLUNHveOMoOkJ9RRe5tbUh7x6SPbdk4ZZsqrBrA1GqIJhOf7tmhYMco7VYrYcRIwCfxfU4uLnFFXnGhqdv45-xYIbMvWibv_PAp_C133IBBmWaxM5LTeWf9NpQHX3BEp-ISxP5sIg3TM_n4VFpTFyYT1ROjiJEYqaq-nmAE-0rP3WFvmMmEY",
+      "onlineSchedule": {
+        "description": "Theory Lectures",
+        "platform": "Zoom Platform",
+        "platformNote": "AI Lab Access Included"
+      },
+      "offlineSchedule": {
+        "description": "Hands-on Lab Sessions",
+        "location": "Tech Hub, Building B",
+        "locationNote": "San Francisco Campus"
+      }
+    },
+    {
+      "id": "automation-testing",
+      "name": "Automation Testing",
+      "instructor": "Lisa Wong",
+      "level": "Beginner",
+      "levelColor": "green",
+      "startDate": "Oct 18",
+      "onlinePercent": 75,
+      "offlinePercent": 25,
+      "fee": 850,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBMBpdj1_lWkPnHwUfzCFpwPgnG8sIlT6ms6Ln8vWDcP62Koxac8snNpCRsIy0sbbk6PhgEVGXpPvPhUlTxLOTNb4MaYK7HZCFzUuLNBvpjudUPG3m7ZovflUr00RKK1BODwQeNs4pZga4YtTrV4cC0DSc5V5X4Veo8UL7gAbclEw3wZfOYAImLcKbm95pfG0pCkSDRdiVZ4tuR522BMh_C16EM9STVMBraeLHbdjzUFR_dq5R2Lx0s0ho_zYt6vQntVG42TQUvtkQ",
+      "onlineSchedule": {
+        "description": "Video modules released weekly",
+        "platform": "LMS Dashboard",
+        "platformNote": "Interactive quizzes & assignments"
+      },
+      "offlineSchedule": {
+        "description": "Lab Practice Sessions",
+        "location": "Testing Lab, Floor 2",
+        "locationNote": "Main Campus"
+      }
+    }
+  ],
+  "batches": [
+    {
+      "id": "b-hyb-1",
+      "courseId": "java-fullstack",
+      "faculty": "Sarah Jenkins",
+      "startTime": "06:00 PM",
+      "endTime": "08:00 PM",
+      "duration": "2 Hours",
+      "type": "online",
+      "day": "Mon & Wed"
+    },
+    {
+      "id": "b-hyb-2",
+      "courseId": "java-fullstack",
+      "faculty": "Sarah Jenkins",
+      "startTime": "10:00 AM",
+      "endTime": "02:00 PM",
+      "duration": "4 Hours",
+      "type": "offline",
+      "day": "Sat"
+    },
+    {
+      "id": "b-hyb-3",
+      "courseId": "python-fullstack",
+      "faculty": "Emily Chen",
+      "startTime": "07:00 PM",
+      "endTime": "08:30 PM",
+      "duration": "1.5 Hours",
+      "type": "online",
+      "day": "Tue & Thu"
+    },
+    {
+      "id": "b-hyb-4",
+      "courseId": "artificial-intelligence",
+      "faculty": "Dr. A. Gupta",
+      "startTime": "06:00 PM",
+      "endTime": "08:00 PM",
+      "duration": "2 Hours",
+      "type": "online",
+      "day": "Wed"
+    }
+  ]
+}

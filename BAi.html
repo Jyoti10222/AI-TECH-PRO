@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI &amp; Machine Learning - Premium Access</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+                "surface-dark": "#1a2632",
+                "border-dark": "#233648",
+                },
+                fontFamily: {
+                "display": ["Inter", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111a22; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #233648; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #324d67; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex shrink-0 items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#233648] bg-white dark:bg-[#111a22] px-6 py-3 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white cursor-pointer">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">AI-TECH PRO</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-[#92adc9] hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-slate-900 dark:text-white text-sm font-medium" href="#">My Courses</a>
+<a class="text-slate-500 dark:text-[#92adc9] hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-[#233648] border border-slate-200 dark:border-transparent">
+<span class="text-xs font-semibold text-slate-500 dark:text-[#92adc9]">Free Plan</span>
+<a class="text-xs font-bold text-primary hover:underline" href="#">Upgrade</a>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 ring-2 ring-white dark:ring-[#233648] cursor-pointer" data-alt="User profile picture showing a person smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfvhQhNzKjwq5Zt0WN4-Y_TbR4hibP8FpYPkFBWnsIbOqbx2fP4nHarjPGG2iCOCBLbX0fP6bZ-y-Rlpv8Zbb6G-Fk8UWhrbwUdR6JcvhNmzZeOTFkB_81Uz3mlt4jOmaYxakOPAR0dGeJzIIzUCPPAe4or_zHQpm2BBdPsZxINx5knG05l8JEX-QpJ339dobJ6At-RsVruUXVsFraIOAh6ltqt72GRnq9lYws7PnabDExJ6c7wzURlulcEMfxcX_KsO078hrTxWI");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-80 hidden lg:flex flex-col bg-white dark:bg-[#111a22] border-r border-slate-200 dark:border-[#233648] overflow-hidden">
+<div class="p-5 border-b border-slate-200 dark:border-[#233648]">
+<h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Course Progress</h3>
+<div class="flex items-end justify-between mb-2">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">25%</span>
+<span class="text-xs text-slate-500 dark:text-[#92adc9]">3/12 Modules</span>
+</div>
+<div class="rounded-full bg-slate-100 dark:bg-[#324d67] h-2 w-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 25%;"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-2">
+<!-- Completed Module -->
+<div class="rounded-lg border border-slate-200 dark:border-[#233648] bg-slate-50 dark:bg-[#1a2632] overflow-hidden">
+<button class="w-full flex items-center justify-between p-3 text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-200">1. Introduction</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">expand_more</span>
+</button>
+</div>
+<!-- Current Module (Active) -->
+<div class="rounded-lg border border-primary/50 bg-primary/5 dark:bg-[#1a2632] overflow-hidden">
+<button class="w-full flex items-center justify-between p-3 text-left">
+<div class="flex items-center gap-3">
+<div class="size-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="size-2 rounded-full bg-primary"></div>
+</div>
+<span class="text-sm font-semibold text-primary dark:text-white">2. Neural Networks</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+</button>
+<div class="px-3 pb-3 pt-1 pl-11">
+<div class="flex flex-col gap-3 border-l-2 border-slate-200 dark:border-[#324d67] pl-4 py-1">
+<div class="flex items-center justify-between group cursor-pointer">
+<span class="text-xs text-slate-500 dark:text-[#92adc9] group-hover:text-primary transition-colors">2.1 Perceptrons</span>
+<span class="material-symbols-outlined text-green-500 text-[16px]">check</span>
+</div>
+<div class="flex items-center justify-between group cursor-pointer">
+<span class="text-xs font-medium text-primary dark:text-white">2.2 Activation Functions</span>
+<span class="material-symbols-outlined text-primary text-[16px]">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Locked Modules -->
+<div class="rounded-lg border border-slate-200 dark:border-[#233648] bg-white dark:bg-transparent opacity-70">
+<button class="w-full flex items-center justify-between p-3 text-left cursor-not-allowed">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">3. Deep Learning</span>
+</div>
+</button>
+</div>
+<div class="rounded-lg border border-slate-200 dark:border-[#233648] bg-white dark:bg-transparent opacity-70">
+<button class="w-full flex items-center justify-between p-3 text-left cursor-not-allowed">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">4. CNNs &amp; RNNs</span>
+</div>
+</button>
+</div>
+<div class="rounded-lg border border-slate-200 dark:border-[#233648] bg-white dark:bg-transparent opacity-70">
+<button class="w-full flex items-center justify-between p-3 text-left cursor-not-allowed">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">5. Capstone Project</span>
+</div>
+</button>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-[#233648]">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#233648] hover:bg-[#324d67] py-2.5 text-sm font-medium text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                    Get Help
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-slate-50 dark:bg-[#0b1219]">
+<div class="w-full max-w-[1200px] mx-auto p-4 md:p-8 flex flex-col gap-6">
+<!-- Breadcrumbs & Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-[#92adc9]">
+<span>Courses</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>AI &amp; Machine Learning</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>Neural Networks</span>
+</div>
+<h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight">2.2 Activation Functions</h1>
+</div>
+<button class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-[#92adc9] hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back to Overview
+                    </button>
+</div>
+<!-- Video Player Container with Paywall -->
+<div class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black shadow-2xl group border border-slate-200 dark:border-[#233648]">
+<!-- Blurred Background (Simulating Video) -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm scale-105" data-alt="Abstract visualization of neural network nodes connecting with glowing lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFYgXu4BybfBk89CZ1O2RPs0dlZ9J1tPIsoD5JN8FgtulANebxjrT_Ghu_futrDlnVUUwjQ3_BZ0mU809eX8Is0SBVim1v4YLoeiW-R4qglKYAiCocO5wbEVmvAz4ajDj5fGBvKxGiyQ_njzyTOK6eGP1RlaYfAMQ46jVhTccXOmAL9uUUdoUsT0DGchnJg-WgDTp0i_J0-Z2NC7B5HldWrHy4Bn1IdpDQGlwC70puUfzz9bLoilV9DaH6FO9kGniGpk75xRc0j6w');"></div>
+<!-- Dark Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30"></div>
+<!-- Player Controls (Fake/Visual Only) -->
+<div class="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between text-white/30 pointer-events-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[32px]">play_arrow</span>
+<div class="h-1 w-32 bg-white/20 rounded-full"></div>
+<span class="text-xs">00:00 / 14:20</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">volume_up</span>
+<span class="material-symbols-outlined">settings</span>
+<span class="material-symbols-outlined">fullscreen</span>
+</div>
+</div>
+<!-- Paywall Card (Center) -->
+<div class="absolute inset-0 flex items-center justify-center p-4 z-20">
+<div class="w-full max-w-md bg-white dark:bg-[#1a2632]/90 dark:backdrop-blur-md rounded-2xl shadow-2xl border border-slate-200 dark:border-[#324d67] p-6 md:p-8 flex flex-col items-center text-center animate-fade-in-up">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary animate-bounce">
+<span class="material-symbols-outlined text-[32px]">lock</span>
+</div>
+<h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2">Premium Access Required</h2>
+<p class="text-sm text-slate-500 dark:text-[#92adc9] mb-6 leading-relaxed">
+                                You've reached the end of the free preview. Unlock the full masterclass to continue learning about Neural Networks and Deep Learning.
+                            </p>
+<!-- Pricing Toggle -->
+<div class="flex items-center bg-slate-100 dark:bg-[#111a22] rounded-lg p-1 w-full mb-6">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="currency" type="radio"/>
+<div class="flex items-center justify-center gap-2 py-2 rounded-md text-sm font-medium text-slate-500 dark:text-[#92adc9] peer-checked:bg-white dark:peer-checked:bg-[#233648] peer-checked:text-slate-900 dark:peer-checked:text-white peer-checked:shadow-sm transition-all">
+<span class="material-symbols-outlined text-[16px]">attach_money</span> USD $99
+                                    </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="currency" type="radio"/>
+<div class="flex items-center justify-center gap-2 py-2 rounded-md text-sm font-medium text-slate-500 dark:text-[#92adc9] peer-checked:bg-white dark:peer-checked:bg-[#233648] peer-checked:text-slate-900 dark:peer-checked:text-white peer-checked:shadow-sm transition-all">
+<span class="material-symbols-outlined text-[16px]">currency_rupee</span> INR ₹7999
+                                    </div>
+</label>
+</div>
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/25 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+                                Unlock Full Course
+                            </button>
+<p class="mt-4 text-xs text-slate-400 dark:text-slate-500">
+                                30-day money-back guarantee. Secure checkout.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Benefits / Why Upgrade -->
+<div class="mt-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                        Why upgrade to Premium?
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Benefit 1 -->
+<div class="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-[#1a2632] border border-slate-200 dark:border-[#233648]">
+<div class="size-10 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-500">verified</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Certification</h4>
+<p class="text-sm text-slate-500 dark:text-[#92adc9] leading-snug">
+                                    Earn an industry-recognized certificate upon completion to boost your LinkedIn profile.
+                                </p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-[#1a2632] border border-slate-200 dark:border-[#233648]">
+<div class="size-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-purple-500">code</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Source Code</h4>
+<p class="text-sm text-slate-500 dark:text-[#92adc9] leading-snug">
+                                    Download complete project files, datasets, and Python notebooks for every lesson.
+                                </p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-[#1a2632] border border-slate-200 dark:border-[#233648]">
+<div class="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-500">school</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Mentor Support</h4>
+<p class="text-sm text-slate-500 dark:text-[#92adc9] leading-snug">
+                                    Get priority answers to your questions from our AI experts and community mentors.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

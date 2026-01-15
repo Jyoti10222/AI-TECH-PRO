@@ -1,0 +1,116 @@
+{
+  "pageInfo": {
+    "title": "Offline Batch Schedule",
+    "description": "View available weekday batches (Mon-Fri) and secure your seat in our offline classrooms."
+  },
+  "stats": {
+    "available": 45,
+    "fastFilling": 12
+  },
+  "batchFee": {
+    "price": 450,
+    "currency": "$"
+  },
+  "courses": [
+    {
+      "id": "java-fullstack",
+      "name": "Java Full Stack Dev",
+      "category": "Beginner",
+      "color": "blue",
+      "room": "Room 301",
+      "price": 450,
+      "totalSeats": 20,
+      "enrolledSeats": 15,
+      "duration": "90 Mins"
+    },
+    {
+      "id": "python-masterclass",
+      "name": "Python Masterclass: Zero to Hero",
+      "category": "Data Science",
+      "color": "emerald",
+      "room": "Hall B, L2",
+      "instructor": "Dr. Alan Grant",
+      "instructorRole": "Senior Python Architect",
+      "price": 450,
+      "totalSeats": 28,
+      "enrolledSeats": 23,
+      "duration": "90 Mins"
+    },
+    {
+      "id": "aws-essentials",
+      "name": "AWS Essentials",
+      "category": "Cloud",
+      "color": "orange",
+      "time": "13:00 - 14:30",
+      "price": 400,
+      "totalSeats": 25,
+      "enrolledSeats": 18,
+      "duration": "90 Mins"
+    },
+    {
+      "id": "java-microservices",
+      "name": "Ai and Machine learning",
+      "category": "Advanced",
+      "color": "blue",
+      "room": "Room 302",
+      "price": 500,
+      "totalSeats": 20,
+      "enrolledSeats": 12,
+      "duration": "120 Mins"
+    },
+    {
+      "id": "react-redux",
+      "name": "React & Redux",
+      "category": "Frontend",
+      "color": "purple",
+      "room": "Lab 4",
+      "price": 425,
+      "totalSeats": 22,
+      "enrolledSeats": 14,
+      "duration": "90 Mins"
+    },
+    {
+      "id": "devops-cicd",
+      "name": "Testing",
+      "category": "DevOps",
+      "color": "teal",
+      "room": "Lab 5",
+      "price": 475,
+      "totalSeats": 20,
+      "enrolledSeats": 17,
+      "duration": "120 Mins"
+    }
+  ],
+  "batches": [
+    {
+      "id": "b-off-1",
+      "courseId": "java-fullstack",
+      "faculty": "John Doe",
+      "day": "Mon",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "duration": "2 Hours",
+      "room": "Lab 101"
+    },
+    {
+      "id": "b-off-2",
+      "courseId": "python-masterclass",
+      "faculty": "Dr. Alan Grant",
+      "day": "Tue",
+      "startTime": "11:00",
+      "endTime": "13:00",
+      "duration": "2 Hours",
+      "room": "Hall B"
+    },
+    {
+      "id": "b-off-3",
+      "courseId": "aws-essentials",
+      "faculty": "Sarah Connor",
+      "day": "Wed",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "duration": "2 Hours",
+      "room": "Lab 202"
+    }
+  ]
+}

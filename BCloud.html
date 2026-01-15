@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cloud Computing Course - Premium Access</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">AI-TECH PRO</h2>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary" href="#">Courses</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-sm font-bold transition-colors">
+<span class="truncate">Log Out</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-slate-200 dark:border-slate-700 cursor-pointer" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-xFzbm5-yrK4E8YxSQLyrm_IvgXoCQI9cEmrIIGSAQwxe3iljy0EnG8X3UXuAsYhOTjdpk4A_GADzsyffJ6x_o41FjN4yniM7mnKKO8lcQCQf7y4cD-aSnCZNTNbEPmGmWKK0vMlU2CU2RNh7CXg_RT1aHsY-EuuDkhtV9BmJVrYyRNliaCOXS7rsPbyNT6NU1s0CMrLKjOffX1pDOfYc5GYo_nls2ue9cJ1--M_L4hLugg1zjO68oBjUq1y9JXOcXMPvobIb2AQ");'></div>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<div class="flex flex-1 flex-col md:flex-row overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-full md:w-80 lg:w-96 flex flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#15202b] h-[calc(100vh-65px)] overflow-hidden shrink-0 z-20">
+<!-- Course Header -->
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-lg mb-2">Cloud Computing: From Zero to Hero</h3>
+<div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-2">
+<span>Progress</span>
+<span>15%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[15%] rounded-full"></div>
+</div>
+</div>
+<!-- Modules List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<!-- Module 1: Completed -->
+<div>
+<div class="flex items-center justify-between mb-2 px-2">
+<span class="text-xs font-bold uppercase text-slate-400 tracking-wider">Module 1: Introduction</span>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">Welcome to the Cloud</p>
+<span class="text-xs text-slate-400">5:20</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">History of Computing</p>
+<span class="text-xs text-slate-400">12:15</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Module 2: Current (Locked) -->
+<div>
+<div class="flex items-center justify-between mb-2 px-2 mt-2">
+<span class="text-xs font-bold uppercase text-primary tracking-wider">Module 2: Virtualization</span>
+</div>
+<div class="space-y-1">
+<!-- Active Item -->
+<div class="relative flex items-center gap-3 p-3 rounded-lg bg-primary/10 border border-primary/20 transition-colors cursor-not-allowed">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary">Hypervisors Explained</p>
+<span class="text-xs text-primary/70">Premium Only</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">play_circle</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg opacity-60 cursor-not-allowed hover:bg-slate-50 dark:hover:bg-slate-800/30">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">Type 1 vs Type 2</p>
+<span class="text-xs text-slate-400">14:30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 3: Locked -->
+<div>
+<div class="flex items-center justify-between mb-2 px-2 mt-2">
+<span class="text-xs font-bold uppercase text-slate-400 tracking-wider">Module 3: AWS Core</span>
+</div>
+<div class="space-y-1 opacity-50">
+<div class="flex items-center gap-3 p-3 rounded-lg cursor-not-allowed">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">EC2 Fundamentals</p>
+<span class="text-xs text-slate-400">22:00</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg cursor-not-allowed">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">S3 Storage Classes</p>
+<span class="text-xs text-slate-400">18:45</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-[calc(100vh-65px)] overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="max-w-[1000px] w-full mx-auto p-6 md:p-10 space-y-8">
+<!-- Breadcrumbs -->
+<nav class="flex text-sm text-slate-500 dark:text-slate-400 mb-4">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary transition-colors" href="#">Cloud Computing Course</a>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Module 2: Virtualization</span>
+</nav>
+<!-- Video Player & Paywall Container -->
+<div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden shadow-2xl group border border-slate-200 dark:border-slate-800">
+<!-- Blurred Background Image representing video content -->
+<div class="absolute inset-0 bg-cover bg-center blur-md opacity-60 scale-105" data-alt="Blurred abstract visualization of cloud server racks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAib3H8lWOIKg5OBgolO1ulJy6yDG2GTXku1P20EGzyvnlOJA9me6eXCoqv8azgxmrEiVMN76GWg5mqJmQsFoJt5gwwq8Tf822hAaBlNQ9NZVywMwYxWPilUuDEkZ0676-C9fnCoHBc9lZxewiIhf2-RaY3nQw4PeoDV6QFh2CoDrxLbH4oC-7uktlHzEey9UoJcOpywKmpC55f_1MwvwGg64Lgt36G4p_VRXir2kyCgMqvphut2LFbgPse2jstkqcfHC3foFYtoSs");'></div>
+<!-- Dark Overlay -->
+<div class="absolute inset-0 bg-slate-900/60 z-10"></div>
+<!-- Paywall Card -->
+<div class="absolute inset-0 z-20 flex items-center justify-center p-4">
+<div class="bg-white dark:bg-[#1a2634] w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-700">
+<!-- Header Gradient -->
+<div class="h-2 bg-gradient-to-r from-blue-400 to-primary w-full"></div>
+<div class="p-8 text-center flex flex-col items-center">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center mb-5 text-primary">
+<span class="material-symbols-outlined text-[32px]">lock</span>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Premium Access Required</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                    You've completed the free modules. Unlock the full course to master cloud architecture and get certified.
+                                </p>
+<!-- Pricing Toggle -->
+<div class="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg mb-6 w-full max-w-[200px]">
+<button class="flex-1 py-1.5 text-sm font-semibold rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm transition-all">
+                                        USD ($)
+                                    </button>
+<button class="flex-1 py-1.5 text-sm font-medium rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">
+                                        INR (₹)
+                                    </button>
+</div>
+<!-- Price Display -->
+<div class="flex items-baseline justify-center gap-1 mb-6">
+<span class="text-4xl font-extrabold text-slate-900 dark:text-white">$49.99</span>
+<span class="text-slate-400 text-sm font-medium line-through ml-2">$99.99</span>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+                                    Unlock Full Course
+                                </button>
+<p class="mt-4 text-xs text-slate-400 dark:text-slate-500">
+                                    30-day money-back guarantee • Secure payment
+                                </p>
+</div>
+<!-- Payment Methods Footer -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-8 py-3 flex justify-center items-center gap-4 border-t border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400" title="Credit Card">credit_card</span>
+<span class="material-symbols-outlined text-slate-400" title="Secure">verified_user</span>
+<span class="text-xs text-slate-400 font-medium">SSL Encrypted</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Why Upgrade Section -->
+<div class="pt-4">
+<div class="flex items-center gap-2 mb-6">
+<span class="h-6 w-1 bg-primary rounded-full"></span>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Why Upgrade to Premium?</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Benefit 1 -->
+<div class="bg-white dark:bg-[#1a2634] p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start gap-4">
+<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-1">Industry Certification</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    Earn a recognized certificate upon completion to boost your LinkedIn profile and resume.
+                                </p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-white dark:bg-[#1a2634] p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start gap-4">
+<div class="size-12 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+<span class="material-symbols-outlined text-[28px]">schedule</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-1">Lifetime Access</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    Revisit the material anytime. Get all future updates to this course for free.
+                                </p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-white dark:bg-[#1a2634] p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start gap-4">
+<div class="size-12 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-[28px]">code</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-1">Hands-on Labs</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    Don't just watch. Practice with 20+ real-world lab exercises in a safe sandbox environment.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Simple -->
+<footer class="mt-auto py-8 text-center text-sm text-slate-400 border-t border-slate-200 dark:border-slate-800">
+                © 2024 AI-TECH PRO LMS. All rights reserved.
+            </footer>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Networking Video Player - Premium Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111a22] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#0d141b] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-[28px]">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">AI-TECH PRO</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d141b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">My Courses</a>
+<a class="text-[#0d141b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Catalog</a>
+<a class="text-[#0d141b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">diamond</span>
+<span class="text-xs font-bold">Go Premium</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm cursor-pointer" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBC3ntz6bfF7BUwqbV3KEi8zqbplBN2f7dN48ED0Q8NPkY9KXBXOBm2BGXRayQlTgfbsbcEGNnoXADFYPUsoafL3C6yF9O8tFGeswt2RzeJ2FFZA3rDBZh_htJ3pytYR0NliFW1rLzkcCAsCrv44kN4pevvxJPGeNLSHYqVi72cRT0XceocFSXCX4_rwWPrmJwVdJuXdsltw4tERZ-ZRNNWhphlqO7_-50lTximR9smbEpwfr1iw-B8tWBWegVH_iqiWhPDo-nYeo0");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 h-[calc(100vh-65px)] overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-80 bg-white dark:bg-[#111a22] border-r border-gray-200 dark:border-gray-800 flex flex-col h-full overflow-y-auto hidden lg:flex shrink-0">
+<div class="p-6 pb-2">
+<h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Course Content</h3>
+<h1 class="text-lg font-bold text-[#0d141b] dark:text-white mb-2 leading-tight">Networking Fundamentals</h1>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-gray-600 dark:text-gray-400">25% Completed</span>
+<span class="font-bold text-primary">2/8 Lessons</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-3 pb-6">
+<!-- Lesson 1: Completed -->
+<a class="flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-green-500 mt-0.5" style="font-size: 20px;">check_circle</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-900 dark:text-gray-200 group-hover:text-primary">1. Intro to Networking</span>
+<span class="text-xs text-gray-500">10:42 • Video</span>
+</div>
+</a>
+<!-- Lesson 2: Completed -->
+<a class="flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-green-500 mt-0.5" style="font-size: 20px;">check_circle</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-900 dark:text-gray-200 group-hover:text-primary">2. OSI Model Overview</span>
+<span class="text-xs text-gray-500">15:30 • Video</span>
+</div>
+</a>
+<!-- Lesson 3: Locked (Current) -->
+<div class="flex items-start gap-3 px-3 py-3 rounded-lg bg-primary/5 border border-primary/20 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">lock</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-900 dark:text-white">3. TCP/IP Model Deep Dive</span>
+<span class="text-xs text-primary font-medium mt-1">Premium Access Required</span>
+</div>
+</div>
+<!-- Lesson 4: Locked -->
+<div class="flex items-start gap-3 px-3 py-3 rounded-lg opacity-60 hover:opacity-100 transition-opacity cursor-not-allowed">
+<span class="material-symbols-outlined text-gray-400 mt-0.5" style="font-size: 20px;">lock</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-900 dark:text-gray-300">4. IPv4 Subnetting</span>
+<span class="text-xs text-gray-500">22:15 • Video</span>
+</div>
+</div>
+<!-- Lesson 5: Locked -->
+<div class="flex items-start gap-3 px-3 py-3 rounded-lg opacity-60 hover:opacity-100 transition-opacity cursor-not-allowed">
+<span class="material-symbols-outlined text-gray-400 mt-0.5" style="font-size: 20px;">lock</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-900 dark:text-gray-300">5. Routing Protocols</span>
+<span class="text-xs text-gray-500">18:45 • Video</span>
+</div>
+</div>
+<!-- Lesson 6: Locked -->
+<div class="flex items-start gap-3 px-3 py-3 rounded-lg opacity-60 hover:opacity-100 transition-opacity cursor-not-allowed">
+<span class="material-symbols-outlined text-gray-400 mt-0.5" style="font-size: 20px;">lock</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-900 dark:text-gray-300">6. Switching Basics</span>
+<span class="text-xs text-gray-500">14:20 • Video</span>
+</div>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-gray-200 dark:border-gray-800">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+<h4 class="text-xs font-bold uppercase text-gray-500 mb-2">Need Help?</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Contact our support team for any payment issues.</p>
+<button class="text-xs font-semibold text-primary hover:underline">Contact Support</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-10">
+<div class="max-w-5xl mx-auto flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary" href="#">Networking Fundamentals</a>
+<span class="mx-2">/</span>
+<span class="text-gray-900 dark:text-white font-medium">Module 3</span>
+</div>
+<!-- Header -->
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-[#0d141b] dark:text-white mb-2">3. TCP/IP Model Deep Dive</h1>
+<p class="text-gray-600 dark:text-gray-300">Learn the intricacies of the TCP/IP protocol suite and how it powers the modern internet.</p>
+</div>
+<!-- Video Player Container (Locked State) -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-xl group">
+<!-- Blurred Background Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm scale-105" data-alt="Abstract server rack lights visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqW0f8leAuYcBe3bfH49SG4_dPZ2euXuzZ_bQGVVekj9Nq6MC0KJsUdJnS5j7EeQy1CKDGLpYYpkNnG0j6uo3sivC4ncJOQzU1Jt-43ZBlXbk6nWDtU4M9YDeCCjOowrPWb1fa8UldS9GEewfVaNVZQMnuWnOWFqxyfOYqgu46oI1rVtoAaLRQM-F5x7dETIJOUGthHw0WahqihQsCCDeq0UuN0MDWoJIGgQ7glxcSaGUao5q_9IYFP7Scs7kJ-8v3PalOC2qz2Kk");'></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40"></div>
+<!-- Locked UI Center -->
+<div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+<div class="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20 shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-size: 32px;">lock</span>
+</div>
+<h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Premium Access Required</h2>
+<p class="text-gray-300 max-w-lg mb-8 text-base md:text-lg">This lesson is part of our advanced curriculum. Upgrade your plan to unlock full access to this course and certification.</p>
+<!-- Pricing Card / CTA -->
+<div class="bg-white dark:bg-[#1e2936] rounded-xl p-1 pr-1 flex items-center shadow-2xl max-w-md w-full border border-gray-100 dark:border-gray-700">
+<div class="flex-1 px-4 py-3 text-left">
+<div class="text-xs text-gray-500 font-medium uppercase tracking-wide mb-0.5">One-time Payment</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-gray-900 dark:text-white">$19.99</span>
+<span class="text-sm text-gray-400 line-through">$49.99</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center gap-2 whitespace-nowrap">
+<span>Unlock Now</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Currency Switcher (Subtle) -->
+<div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+<span>Switch currency:</span>
+<button class="hover:text-white underline decoration-dashed underline-offset-4">USD ($)</button>
+<span>/</span>
+<button class="hover:text-white underline decoration-dashed underline-offset-4">INR (₹)</button>
+</div>
+</div>
+<!-- Player Controls (Disabled visual only) -->
+<div class="absolute bottom-0 left-0 right-0 h-12 bg-black/50 backdrop-blur px-4 flex items-center gap-4 border-t border-white/10 opacity-50 pointer-events-none">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+<div class="h-1 bg-white/30 rounded-full flex-1"></div>
+<span class="material-symbols-outlined text-white">volume_up</span>
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</div>
+<!-- Why Upgrade Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<div class="bg-white dark:bg-[#111a22] p-6 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">Certification</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Earn an industry-recognized certificate upon completion.</p>
+</div>
+<div class="bg-white dark:bg-[#111a22] p-6 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">download</span>
+</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">Resources</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Download lesson slides, lab guides, and cheat sheets.</p>
+</div>
+<div class="bg-white dark:bg-[#111a22] p-6 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">Community</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Access the private Discord server for peer support.</p>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="flex justify-center items-center gap-6 py-6 opacity-60 grayscale hover:grayscale-0 transition-all">
+<div class="h-8 flex items-center gap-1 font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">lock</span> Secure Payment
+                    </div>
+<div class="h-6 w-px bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-8 flex items-center gap-1 font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">verified_user</span> 30-Day Guarantee
+                    </div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
